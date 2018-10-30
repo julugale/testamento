@@ -63,13 +63,23 @@ class DoubleList(object):
 
     ##si no, pues que no se encontro
     def peek(self):
-        print ("List:")
+        print ("LIST:")
         q = self.head
+        print(q.data)
         while q is not None:
             ##se imprime
             print(q.next.data) if hasattr(q.next, "data") else None
             q = q.next
         
+    def peekreverse(self):
+        print ("LIST REVERSE:")
+        ##ahora se empieza de la cola parriba
+        q = self.tail
+        print(q.data)
+        while q is not None:
+            ##se imprime al reves
+            print(q.prev.data) if hasattr(q.prev, "data") else None
+            q = q.prev
  
  
 d = DoubleList()
@@ -86,7 +96,7 @@ d.push(8)
 d.push(9)
 
 d.peek()
-
+print("******************************************************")
 d.push(10)
 d.push(11)
 d.push(13)
@@ -94,11 +104,14 @@ d.push(13)
 d.pop(8)
 d.pop(1)
 
+print("ROOT")
 print(d.head.data)
 
- 
+print("******************************************************")
 d.peek()
-
+print("******************************************************")
+d.peekreverse()
+print("******************************************************")
 d.find(0)
 d.find(7)
 d.find(8)
